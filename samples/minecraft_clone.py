@@ -13,7 +13,7 @@ around the player so you can interact with the world.
 from ursina import *
 from ursina.prefabs.first_person_controller import FirstPersonController
 
-
+sky = "sky.png"
 app = Ursina()
 
 # Define a Voxel class.
@@ -40,7 +40,8 @@ class Voxel(Button):
             if key == 'right mouse down':
                 destroy(self)
 
-
+Entity(parent = scene, model="sphere", texture="sky", scale=(150), position=(0,0,0), double_sided = True)
+                
 for z in range(8):
     for x in range(8):
         voxel = Voxel(position=(x,0,z))
